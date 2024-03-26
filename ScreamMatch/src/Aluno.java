@@ -1,23 +1,40 @@
 public class Aluno {
-  String nome;
-  int idade;
-  String genero;
+  private String nome;
+  private double primeirAvaliacao;
+  private double segundAvaliacao;
+  private double terceirAvaliacao;
 
-  public Aluno (String nome, int idade, String genero){
-    this.nome = nome;
-    this.idade = idade;
-    this.genero = genero;
+  //GETTERS
+  public String getNome (){
+    return this.nome;
   }
-  
+   public Double getPrimeiraAvaliacao(){
+    return this.primeirAvaliacao;
+   }
 
-  void exibirDadosAluno(){
-    System.out.println("Informacoes do aluno");  
-    System.out.println("Nome" + nome);  
-    System.out.println("Idade: " + idade);
-    System.out.println("Genero: " + genero);
+   public Double getSegundaAvaliacao(){
+    return this.segundAvaliacao;
+   }
 
-}
+   public Double getTerceiraAvaliacao(){
+    return this.terceirAvaliacao;
+   }
+   //SETTERS
 
+   public void setNome(String nome){
+    this.nome = nome;
+   }
+
+   public void setPrimeirAvaliacao( double nota){
+    this.primeirAvaliacao = nota;
+   }
+
+    public void setSegundAvaliacao(double nota){
+      this.segundAvaliacao = nota;
+    }
+    public void setTerceirAvaliacao(double nota){
+      this.terceirAvaliacao = nota;
+    }
 }
 
 
