@@ -5,6 +5,7 @@ public class CalculadoraDeTempo {
   private int tempoTotal = 0;
 
   public int getTempoTotal(){
+
     return this.tempoTotal;
   }
 
