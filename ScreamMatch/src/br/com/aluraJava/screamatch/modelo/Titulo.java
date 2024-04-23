@@ -2,12 +2,17 @@ package br.com.aluraJava.screamatch.modelo;
 
 public class Titulo {
   private String nome;
-  private String sinopseFilme;
   private int anoLancamento;
+  private String sinopseFilme;
   private int duracaoEmMinutos;
   private boolean incluidoNoPlano;
   private double somaDasAvaliacoes;
   private int totalAvaliacao;
+
+  public Titulo (String nome, int anoLancamento){
+    this.nome = nome;
+    this.anoLancamento = anoLancamento;
+  }
 
   public String getNome() {
     return this.nome;
