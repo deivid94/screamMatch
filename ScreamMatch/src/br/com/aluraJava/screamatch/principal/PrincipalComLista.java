@@ -5,6 +5,7 @@ import br.com.aluraJava.screamatch.modelo.Serie;
 import br.com.aluraJava.screamatch.modelo.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalComLista {
     public static void main(String[] args) {
@@ -23,6 +24,11 @@ public class PrincipalComLista {
         lista.add(VelosesEFuriosos);
         lista.add(loboDeWallStreet);
         lista.add(oMeninoQueDescobriuOvento);
+
+        Collections.sort(lista);
+        System.out.println("Lista ordenada de todos os Titulos: ");
+        System.out.println(lista);
+
 
         for (Titulo item:lista ){
             System.out.println(item);
