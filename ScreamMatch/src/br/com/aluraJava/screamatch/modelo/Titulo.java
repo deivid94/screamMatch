@@ -1,6 +1,11 @@
 package br.com.aluraJava.screamatch.modelo;
 
+import br.com.aluraJava.screamatch.excesao.ErroDeConversaoExcepetion;
+import br.com.aluraJava.screamatch.principal.TituloOmdb;
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo implements Comparable<Titulo>{
+
   private String nome;
   private int anoLancamento;
   private String sinopseFilme;
@@ -12,6 +17,18 @@ public class Titulo implements Comparable<Titulo>{
   public Titulo (String nome, int anoLancamento){
     this.nome = nome;
     this.anoLancamento = anoLancamento;
+  }
+
+  public Titulo (TituloOmdb meuTituloOmdb){
+    this.nome = meuTituloOmdb.title();
+    if (meuTituloOmdb.year().length() > 4 ){
+      throw new ErroDeConversaoExcepetion("Nao consegui converte o ano" +
+              "porquie tem mais de 4 caractertes");
+    }
+    this.anoLancamento = Integer.valueOf(meuTituloOmdb.year());
+    this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0,2));
+
+
   }
 
   public String getNome() {
@@ -93,10 +110,18 @@ public class Titulo implements Comparable<Titulo>{
     totalAvaliacao++;
   }
 
-
   @Override
   public int compareTo(Titulo outroTitulo) {
    return this.getNome().compareTo(outroTitulo.getNome());
+  }
+
+  @Override
+  public String toString() {
+    return "Titulo{" +
+            "nome='" + nome + '\'' +
+            ", anoLancamento=" + anoLancamento +
+            ", duracaoEmMinutos=" + duracaoEmMinutos +
+            '}';
   }
 }
 
